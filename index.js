@@ -4,9 +4,9 @@ const sites = require("./sites.json");
 const { pingSite } = require("./src/pingsite");
 const Discord = require("discord.js");
 const client = new Discord.Client();
-require('dotenv').config();
+require("dotenv").config();
 
-console.log("this got here")
+console.log("this got here");
 const deploy = async () => {
   const browser = await puppeteer.launch(config);
   const page = await browser.newPage();
@@ -22,18 +22,16 @@ const deploy = async () => {
   }
 };
 
-
 client.on("ready", () => {
-  console.log(`Logged in as ${client.user.tag} and ready to hunt.`)
+  console.log(`Logged in as ${client.user.tag} and ready to hunt.`);
 });
 
-client.on("message", msg => {
+client.on("message", (msg) => {
   if (msg.content === "!hunt") {
-    deploy()
+    deploy();
   }
-})
+});
 
-client.login("token")
-
+client.login(process.env.DISCORD_TOKEN);
 
 // module.exports = deploy
