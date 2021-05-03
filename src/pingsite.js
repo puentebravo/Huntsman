@@ -1,6 +1,5 @@
 // Primary site ping functions go here
-const { notify } = require("./notify");
-
+const Discord = require("discord.js");
 
 const match = (expected, actual) => {
   if (Array.isArray(expected)) return expected.includes(actual);
@@ -24,25 +23,34 @@ const pingSite = async (site, page) => {
 
     const value = String(targetText).replace(/^\s+|\s+$/g, "");
     if (!match(value, expected)) {
-      await notify({
-        to: "+16319880913",
-        from: "+16572981228",
-        body: `Success! I expected ${description} to be ${expected}, but instead found that it's ${value}. You should checck out ${url} right away!`,
-      });
+      await Discord.Message.reply(
+        `Success! I expected ${description} to be ${expected}, but instead found that it's ${value}. You should check out ${url} right away!`
+      );
+      // await notify({
+      //   to: "+16319880913",
+      //   from: "+16572981228",
+      //   body: `Success! I expected ${description} to be ${expected}, but instead found that it's ${value}. You should checck out ${url} right away!`,
+      // });
     } else {
-      await notify({
-        to: "+16319880913",
-        from: "+16572981228",
-        body: `I'm sorry, but ${description} is ${expected} Keep at it!` ,
-      })
+      await Discord.Message.reply(
+        `I'm sorry, but ${description} is ${expected} Keep at it!`
+      );
+      // await notify({
+      //   to: "+16319880913",
+      //   from: "+16572981228",
+      //   body: `I'm sorry, but ${description} is ${expected} Keep at it!` ,
+      // })
     }
   } catch (error) {
     //notify user that the node couldn't be reached.
-    await notify({
-      to: "+16319880913", //Amplify user call
-      from: "+16572981228",
-      body: `Sorry, but I couldn't find that item. The listing might have changed, or the website may have changed its layout. Please notify BotDock so we can look into this!`,
-    });
+    await Discord.Message.reply(
+      `Sorry, but I couldn't find that item. The listing might have changed, or the website may have changed its layout. Let my creator know!`
+    );
+    // await notify({
+    //   to: "+16319880913", //Amplify user call
+    //   from: "+16572981228",
+    //   body: `Sorry, but I couldn't find that item. The listing might have changed, or the website may have changed its layout. Please notify BotDock so we can look into this!`,
+    // });
   }
 };
 
