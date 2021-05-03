@@ -1,0 +1,24 @@
+{
+  "name": "huntsman",
+  "version": "1.0.0",
+  "description": "A stock checking discord bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/puentebravo/Huntsman.git"
+  },
+  "author": "Charlie Puente",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/puentebravo/Huntsman/issues"
+  },
+  "homepage": "https://github.com/puentebravo/Huntsman#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dotenv": "^8.2.0",
+    "puppeteer": "^9.0.0"
+  }
+}
