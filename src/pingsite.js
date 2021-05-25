@@ -1,10 +1,13 @@
 // Primary site ping functions go here
 const Discord = require("discord.js");
+ 
 
 const match = (expected, actual) => {
   if (Array.isArray(expected)) return expected.includes(actual);
   return actual === expected;
 };
+
+// Hanging somewhere on the notify await call. Debug.
 
 const pingSite = async (site, page) => {
   const { url, xPath, expected, description } = site;
@@ -23,18 +26,17 @@ const pingSite = async (site, page) => {
 
     const value = String(targetText).replace(/^\s+|\s+$/g, "");
     if (!match(value, expected)) {
-      await Discord.Message.reply(
+      console.log(
         `Success! I expected ${description} to be ${expected}, but instead found that it's ${value}. You should check out ${url} right away!`
       );
+
       // await notify({
       //   to: "+16319880913",
       //   from: "+16572981228",
       //   body: `Success! I expected ${description} to be ${expected}, but instead found that it's ${value}. You should checck out ${url} right away!`,
       // });
     } else {
-      await Discord.Message.reply(
-        `I'm sorry, but ${description} is ${expected} Keep at it!`
-      );
+      console.log(`I'm sorry, but ${description} is ${expected} Keep at it!`);
       // await notify({
       //   to: "+16319880913",
       //   from: "+16572981228",
@@ -43,7 +45,7 @@ const pingSite = async (site, page) => {
     }
   } catch (error) {
     //notify user that the node couldn't be reached.
-    await Discord.Message.reply(
+    console.log(
       `Sorry, but I couldn't find that item. The listing might have changed, or the website may have changed its layout. Let my creator know!`
     );
     // await notify({
