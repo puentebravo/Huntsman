@@ -4,17 +4,11 @@
     "xPath": "//*[@id=\"availability\"]/span/text()",
     "expected": "Currently unavailable.",
     "description": "Xbox Series X - Amazon.com"
-  },
+  }, 
   {
-    "url": "https://www.bestbuy.com/site/microsoft-xbox-series-x-1tb-console-black/6428324.p?skuId=6428324",
-    "xPath": "//*[@id=\"fulfillment-add-to-cart-button-34753518\"]/div/div/div/button",
-    "expected": "Sold Out",
-    "description": "Xbox Series X - Bestbuy.com"
-  },
-  {
-    "url": "https://www.bestbuy.com/site/microsoft-xbox-series-x-1tb-console-black/6428324.p?skuId=6428324",
-    "xPath": "//*[@id=\"primary-details\"]/div[3]/div[9]/div[2]/div/div[1]/button",
-    "expected": "Not Available",
-    "description": "Xbox Series X - Bestbuy.com"
+    "url": "https://www.target.com/p/xbox-series-x-console/-/A-80790841?ref=tgt_adv_XS000000&AFID=google_pla_df&fndsrc=tgtao&DFA=71700000014846099&CPNG=PLA_Electronics%2BShopping_Brand%7CElectronics_Ecomm_Hardlines&adgroup=SC_Electronics&LID=700000001170770pgs&LNM=PRODUCT_GROUP&network=g&device=c&location=9060351&targetid=pla-305534446499&ds_rl=1246978&ds_rl=1248099&gclid=Cj0KCQjwwLKFBhDPARIsAPzPi-Key-AGdGoaSmtYjzpjWECK73k72Il_fT-pYOUIq0OYOGdQLbaIQkkaAsZjEALw_wcB&gclsrc=aw.ds",
+    "xPath": "//*[@id=\"viewport\"]/div[4]/div/div[3]/div[3]/div[1]/div/div[3]",
+    "expected": "This item isn't available for shipping.",
+    "description": "Xbox Series X - Target"
   }
 ]
